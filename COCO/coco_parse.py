@@ -61,8 +61,8 @@ def normalizeAndOutput(inFile, outFile):
 def main():
 	infile1 = './annotations/instances_val2014.json'
 	infile2 = './annotations/instances_train2014.json'
-	outFile1 = './val_analysisInput'
-	outFile2 = './train_analysisInput'
+	outFile1 = './coco_val_ann'
+	outFile2 = './coco_train_ann'
 
 	print("Validation Annotations:\n")
 	normalizeAndOutput(infile1, outFile1)
