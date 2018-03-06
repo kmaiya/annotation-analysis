@@ -23,7 +23,6 @@ def main():
 		for file in files:
 			filepath = subdir + os.sep + file
 			if filepath.endswith(".xml"):
-				#print (filepath)
 				infile = filepath
 				try:
 					tree = et.parse(infile)
