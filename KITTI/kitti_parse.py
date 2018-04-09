@@ -27,6 +27,9 @@ def main():
 			filepath = subdir + os.sep + file
 			if filepath.endswith(".txt"):
 				infile = open(filepath, 'r')
+				imgId = filepath
+				imgId = imgId.replace('./annotations//', '')
+				imgId = imgId.replace('.txt', '')
 				for line in infile:
 					if any(x in line for x in typeList):
 						annData = line.strip().split()
@@ -39,8 +42,8 @@ def main():
 						dims[1] = dims[1] * scaleY
 						dims[2] = dims[2] * scaleX
 						dims[3] = dims[3] * scaleY
-						fileOut.write("%f %f %f %f %f\n" % (dims[0], dims[1], dims[2], dims[3], imgId))
-			imgId = imgId + 1
+						fileOut.write("%f %f %f %f %s\n" % (dims[0], dims[1], dims[2], dims[3], imgId))
+			#imgId = imgId + 1
 
 		
 main()
