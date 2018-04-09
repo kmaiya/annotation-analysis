@@ -34,6 +34,9 @@ def main():
 	with open(trainAnnsList, 'r') as trainList:
 		for trainDir in trainList:
 			trainDir = trainDir.strip()
+			imgId = trainDir
+			imgId = imgId.replace('Train/annotations/', '')
+			imgId = imgId.replace('.txt', '')
 			with open('./annotations/' + trainDir, 'r') as inf:
 				for line in inf:
 					line = line.strip()
@@ -47,8 +50,8 @@ def main():
 						dims[1] = dims[1] * scaleY
 						dims[2] = dims[2] * scaleX
 						dims[3] = dims[3] * scaleY
-						trainOut.write("%f %f %f %f %f\n" % (dims[0], dims[1], dims[2], dims[3], imgId))
-			imgId = imgId + 1
+						trainOut.write("%f %f %f %f %s\n" % (dims[0], dims[1], dims[2], dims[3], imgId))
+			#imgId = imgId + 1
 	trainOut.close()
 
 	width = 0
@@ -59,6 +62,9 @@ def main():
 	with open(testAnnsList, 'r') as testList:
 		for testDir in testList:
 			testDir = testDir.strip()
+			imgId = testDir
+			imgId = imgId.replace('Test/annotations/', '')
+			imgId = imgId.replace('.txt', '')
 			with open('./annotations/' + testDir, 'r') as inf:
 				for line in inf:
 					line = line.strip()
@@ -72,8 +78,8 @@ def main():
 						dims[1] = dims[1] * scaleY
 						dims[2] = dims[2] * scaleX
 						dims[3] = dims[3] * scaleY
-						testOut.write("%f %f %f %f %f\n" % (dims[0], dims[1], dims[2], dims[3], imgId))
-			imgId = imgId + 1
+						testOut.write("%f %f %f %f %s\n" % (dims[0], dims[1], dims[2], dims[3], imgId))
+			#imgId = imgId + 1
 	testOut.close()
 			
 main()
