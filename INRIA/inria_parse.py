@@ -30,7 +30,6 @@ def main():
 	height = 0
 	imgId = 0
 	trainOut = open(outFile1, 'w')
-	trainOut.write('%d %d\n' % (NORMALIZED_WIDTH, NORMALIZED_HEIGHT))
 	with open(trainAnnsList, 'r') as trainList:
 		for trainDir in trainList:
 			trainDir = trainDir.strip()
@@ -58,7 +57,6 @@ def main():
 	height = 0
 	imgId = 0
 	testOut = open(outFile2, 'w')
-	testOut.write('%d %d\n' % (NORMALIZED_WIDTH, NORMALIZED_HEIGHT))
 	with open(testAnnsList, 'r') as testList:
 		for testDir in testList:
 			testDir = testDir.strip()

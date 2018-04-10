@@ -18,7 +18,6 @@ def getBBOXDimensions(xmin, ymin, xmax, ymax):
 def main():
 	outFile1 = "kitti_ann"
 	fileOut = open(outFile1, 'w')
-	fileOut.write('%d %d\n' % (NORMALIZED_WIDTH, NORMALIZED_HEIGHT))
 	rootdir = './annotations/'
 	imgId = 0
 	typeList = ['Pedestrian', 'Person', 'Cyclist']

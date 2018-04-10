@@ -16,7 +16,6 @@ def getBBOXDimensions(xmin, ymin, xmax, ymax):
 def main():
 	outFile1 = "cam2_ann"
 	fileOut = open(outFile1, 'w')
-	fileOut.write('%d %d\n' % (NORMALIZED_WIDTH, NORMALIZED_HEIGHT))
 	rootdir = './annotations/'
 	imgCount = 0
 	for subdir, dirs, files in os.walk(rootdir):

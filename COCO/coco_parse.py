@@ -30,7 +30,6 @@ def normalizeAndOutput(inFile, outFile):
 	print("Person Annotations: " + str(len(personAnns)))
 
 	file = open(outFile, 'w')
-	file.write('%d %d\n' % (NORMALIZED_WIDTH, NORMALIZED_HEIGHT))
 	count = 0
 	for ann in personAnns:
 		imgId = ann['image_id']
